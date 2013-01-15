@@ -21,5 +21,5 @@ try:
 	print reply
 finally:
 	# close the socket to clean up
+	print 'client is closed'
 	foo.close()
-	print 'foo is closed'

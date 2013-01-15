@@ -29,20 +29,15 @@ while True:
 		for c in msg:
 			sum = sum + int(c)
 		reply = str(sum)
-		conn.sendall(reply)    
-	finally:
-	# Clean up the connection
-		print 'connections closing'
+		conn.sendall(reply)  
+		print 'sent'  
 		conn.close()
 		moo.close()
-
-		
-"""ADDS VALUES, BUT DOESN'T SEEM TO CLOSE PROPERLY. THIS ERROR:
-connections closing
-connections closing
-Traceback (most recent call last):
-  File "echo_server.py", line 27, in <module>
-    msg = conn.recv(4096)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 170, in _dummy
-    raise error(EBADF, 'Bad file descriptor')
-socket.error: [Errno 9] Bad file descriptor"""
+	finally:
+		sys.exit()
+# 	Clean up the connection
+		# conn.shutdown(1)
+# 		moo.shutdown(1)
+	# 	conn.close()
+# 		moo.close()
+# 		print 'server connections closing'
