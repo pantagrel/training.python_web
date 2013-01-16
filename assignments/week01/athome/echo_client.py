@@ -12,7 +12,9 @@ foo.connect(server_address)
 try:
 # Send data
 	num1 = raw_input('--> ')
+	num1 = num1 + ','
 	num2 = raw_input('--> ')
+# 	num2 = num2 + ','
 	message = num1 + num2
 	foo.sendall(message)
 
