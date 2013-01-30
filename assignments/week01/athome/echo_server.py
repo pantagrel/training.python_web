@@ -28,6 +28,7 @@ while True:
 		sum = 0
 		for c in msg:
 			sum = sum + int(c)
+			#handle the fact that there's a comma in there.
 		reply = str(sum)
 		conn.sendall(reply)  
 		print 'sent'  
