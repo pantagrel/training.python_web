@@ -12,6 +12,14 @@ res = urllib2.urlopen('?'.join([base, query]))
 response = json.load(res)
 pprint(response)
 
+page = urllib2.urlopen(url)
+parsed = BeautifulSoup(page)
+
+page = urllib2.urlopen(url)
+if page.code == 200;
+	parsed = BeautifulSoup(page)
+else:
+	raise SomeExceptionYouCanCatch
 
 # base = 'http://api.techsavvy.io/jobs'
 # search = 'python+web?limit=20'
