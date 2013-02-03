@@ -49,8 +49,8 @@ def not_found(environ, start_response):
 # map urls to functions
 urls = [
     (r'^$', index),
-#     (r'hello/?$', hello),
-#     (r'hello/(.+)$', hello)
+    (r'hello/?$', hello),
+    (r'hello/(.+)$', hello)
     
 ]
 

@@ -13,7 +13,8 @@ def index(environ, start_response):
 	links = ''
 	for entry in books.titles():
 # 		make a link with book title
-		links += '<p><a href="#">' + str(entry['title']) + '</p>'
+# 		bookID = "/?id=" +str(entry['id']
+		links += '<p><a href="/?id=' + entry['id'] + '">' + str(entry['title']) + '</p>'
 	start_response('200 OK', [('Content-Type', 'text/html')])
 	header = "<html><head><title>Kristin Gannon | Book Database Thingamajig</title></head>"
 	body = "<body><h1>Book Database:</h1>%s</body></html>" % links
@@ -21,7 +22,10 @@ def index(environ, start_response):
 
 
 # one function lists one book
-
+#generate a page called idX
+def bookPage():
+	header = "<head><title> %s </title></head>" % entry['id']
+	return [header]
 
 #not found
 def not_found(environ, start_response):
@@ -32,8 +36,8 @@ def not_found(environ, start_response):
 # map urls to functions
 urls = [
     (r'^$', index),
-    (r'hello/?$', index),
-    (r'hello/(.+)$', index)   
+    (r'/?$', bookPage),
+    (r'/(.+)$', bookPage)   
 ]
 
     
