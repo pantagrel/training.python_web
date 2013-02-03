@@ -5,7 +5,11 @@ from cgi import escape, parse_qs
 import bookdb
 from wsgiref.simple_server import make_server
 
+
+
 books = bookdb.BookDB()
+
+
 
 # one function lists all books
 def index(environ, start_response):
@@ -22,24 +26,42 @@ def index(environ, start_response):
 
 
 # one function lists one book
-#generate a page called idX
-def bookPage():
-	header = "<head><title> %s </title></head>" % entry['id']
-	return [header]
+def bookPage(environ, start_response):
+	parameters = parse_qs(environ.get('QUERY_STRING', ''))
+# 	print 'PARAMETERS: ' + parameters
+	if 'id' in parameters:
+		id = escape(parameters['id'][0])
+	else:
+		id = 'Title not in database'
+	singleBook = books.title_info(id)
+	start_response('200 OK', [('Content-Type', 'text/html')])
+	header = "<html><head><title>Single Book Page</title></head>"
+	body = """
+	<p>Title:</p>
+	"""
+# 	body = singleBook
+	link = '<p><a href="../">Return to book list></a></p>'
+	return [singleBook]
+# 	return [header + body + link]
+	
+	
 
 #not found
 def not_found(environ, start_response):
     """Called if no URL matches."""
     start_response('404 NOT FOUND', [('Content-Type', 'text/plain')])
-    return ['Not Found']
+    message = 'ARG! NOT FOUND.'
+    return [message]
+    
+    
     
 # map urls to functions
 urls = [
     (r'^$', index),
-    (r'/?$', bookPage),
-    (r'/(.+)$', bookPage)   
+    (r'book/?$', bookPage),
+    (r'book/(.+)$', bookPage)   
 ]
-
+    
     
 def application(environ, start_response):
     """

@@ -1,4 +1,5 @@
 #Book Database / WSGI Exercise
 ##Week 04
 
-Currently, nothing to report.
+what does 'parameters' look like?
+cgi escape(): is there documentation for this?
