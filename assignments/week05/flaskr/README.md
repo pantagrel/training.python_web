@@ -15,7 +15,7 @@
 	2. How many should be set? 
 	3. Is this like CSS where being explicit with as much as possible is a good thing?
 4. Other frameworks
-5. 
+5. Putting the microblog on the bluebox server.
 
 ###Stuff I don't understand:
 1. Adding and making dynamic links.
