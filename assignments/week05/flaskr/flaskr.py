@@ -3,18 +3,13 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 from contextlib import closing
 
-#config
-DATABASE = '/tmp/flaskr.db'
-DEBUG = True
-SECRET_KEY = 'development key'
-USERNAME = 'admin'
-PASSWORD = 'default'
 
 app = Flask(__name__)
 
 #learn how to separate config files and load them
 #from_ennvvar() ##app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-app.config.from_object(__name__)
+# app.config.from_object(__name__)
+app.config.from_pyfile('config.cfg')
 
 def connect_db():
 	return sqlite3.connect(app.config['DATABASE'])
