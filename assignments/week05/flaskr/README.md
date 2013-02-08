@@ -11,8 +11,9 @@
 1. Real expressions
 2. unittest
 3. The range of options available in CONFIG files.
-	-Do these options change across frameworks?
-	-How many should be set? Is this like CSS where being explicit with as much as possible is a good thing?
+	1. Do these options change across frameworks?
+	2. How many should be set? 
+	3. Is this like CSS where being explicit with as much as possible is a good thing?
 4. Other frameworks
 5. 
 
