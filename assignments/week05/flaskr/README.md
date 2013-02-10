@@ -1,6 +1,10 @@
 #Flask Framework: Microblog
 ##Week 05
 
+
+The microtest on VM: http://block647048-4cf.blueboxgrid.com:5000/
+
+
 ###I followed Flask's online tutorial. 
 
 The things I'd like to add to the microblog:
