@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+	<article class="post">
+		<h1> {{ title }}</h1>
+			{% for entry in entries %}
+				{% if entry.title == title %}
+				<p>{{ entry.text|safe }}</p>
+				<h3>{{ entry.id }}</h3>
+			{% endif %}
+  		{% endfor %}
+
+		<p><a href="../">Return to home</a></p>
+
+		<p><a href="{{ prev }}">Previous Post</a> | <a href="{{ next }}">Next post</a></p>
+  </article>
+  {% endblock %}
