@@ -6,9 +6,6 @@ from contextlib import closing
 
 app = Flask(__name__)
 
-#learn how to separate config files and load them
-#from_ennvvar() ##app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-# app.config.from_object(__name__)
 app.config.from_pyfile('config.cfg')
 
 def connect_db():
@@ -31,7 +28,8 @@ def teardown_request(exception):
 @app.route('/')
 def show_entries():
     cur = g.db.execute('select title, text from entries order by id desc')
-    entries = [dict(title=row[0], text=row[1]) for row in cur.fetchall()]
+    entries = [dict(title=row[0],) for row in cur.fetchall()]
+    # url_for('show_post', title = '<title>')
     return render_template('show_entries.html', entries=entries)
 
 @app.route('/add', methods=['POST'])
@@ -43,6 +41,13 @@ def add_entry():
     g.db.commit()
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
+
+@app.route('/post/<title>')
+def show_post(title):
+	#pull post data from database?
+	cur = g.db.execute('select title, text from entries order by id desc')
+	entries = [dict(title=row[0], text=row[1]) for row in cur.fetchall()]
+	return render_template('post.html', title=title, entries=entries, prev=prev, next=next)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

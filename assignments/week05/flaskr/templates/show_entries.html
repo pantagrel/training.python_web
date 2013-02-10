@@ -13,9 +13,13 @@
 	{% endif %}
 	<ul class=entries>
 		{% for entry in entries %}
-			<li><a href="#"><h2>{{ entry.title }}</h2></a><p>{{ entry.text|safe }}</p></li>
+			<li>
+				<a href="/post/{{ entry.title }}"><h2>{{ entry.title }}</h2></a>
+			</li>
 		{% else %}
     		<li><em>Unbelievable.  No entries here so far</em></li>
   		{% endfor %}
   </ul>
 {% endblock %}
+
+<!-- a href: title needs accomodations for spaces, and needs to generate a new 'single' page -->
