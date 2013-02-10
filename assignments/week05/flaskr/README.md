@@ -2,7 +2,9 @@
 ##Week 05
 
 ###I followed Flask's online tutorial. 
+
 The things I'd like to add to the microblog:
+
 1. The blog title dynamically links to a post view page.
 	a. This is working, but now I need to make the dynamic links browser-friendly (deal with spaces in post title, e.g.)
 	b. 
@@ -11,6 +13,7 @@ The things I'd like to add to the microblog:
 4. Connect to a 'real' database. (Low priority/taks for week06)
 
 ###Stuff I need to learn more about:
+
 1. Real expressions
 2. unittest
 3. The range of options available in CONFIG files.
