@@ -2,7 +2,7 @@
 ##Week 05
 
 
-The microtest on VM: http://block647048-4cf.blueboxgrid.com:5000/
+The [VM microtest](http://block647048-4cf.blueboxgrid.com:5000/).
 
 
 ###I followed Flask's online tutorial. 
