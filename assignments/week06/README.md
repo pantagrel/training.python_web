@@ -9,15 +9,15 @@
 
 ###If Django isn't installed in the virtualenv, install it using pip.
 
-	`pip install django`
+	pip install django
 
 ###Confirm which version of Django is running, if necessary.
 	
-	`which django-admin.py`
+	which django-admin.py
 
 ###Create the project directory. 
 
-	`django_admin.py startproject [myproject]`
+	django_admin.py startproject [myproject]
 
 This will create two folders. The outer folder is just the container for the actual project stuff. If you want change the outer folder to a different now, do it now because we're going to set up git next and changing folder names after we do any git commits might get confusing. So keep it simple and either change it right now or don't.
 
@@ -25,7 +25,7 @@ This will create two folders. The outer folder is just the container for the act
 
 Change into the outer `myproject` directory and run:
 	
-	`python manage.py runserver`
+	python manage.py runserver
 
 You should see a message like this:
 
@@ -38,19 +38,19 @@ If not, be sure you're either in the correct directory (the outer directory), or
 
 ###Set up git for the project.
 	
-	`git init`
+	git init
 
 And then add all the files you've just made (The two folders, plus the basic django starter files like `manage.py` and `myproject/settings.py`).
 
-	`git add myproject`
+	git add myproject
 
 And commit the files to the repo:
 
-	`git commit -m 'first commit etc etc'`
+	git commit -m 'first commit etc etc'
 
 - ###Add South for database migrations. Not sure why yet, but do it.
 
-	`pip install south`
+	pip install south
 
 South has to be added to the list of installed apps in the `settings.py` file.
 
