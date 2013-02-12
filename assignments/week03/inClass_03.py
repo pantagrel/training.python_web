@@ -61,3 +61,13 @@ def soupScrape(pageToParse):
 soupScrape('blogScrape.html')
 
 
+"""
+QUESTIONS:
+1. Why call the function as shown in slide 34? 
+(with the implied tuple?)
+2. should the title and the url be combined in the dictionary value?
+or should they be separate but related entries? cuz separate-but-related
+is confusing.
+3. 
+
+"""

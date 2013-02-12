@@ -27,11 +27,15 @@ The things I'd like to add to the microblog:
 4. Other frameworks
 5. Putting the microblog on the bluebox server.
 	+ The files are loaded there, but 
-		Firefox can't establish a connection to the server 
-		at block647048-4cf.blueboxgrid.com:5000.
+			
+			Firefox can't establish a connection to the server 
+			at block647048-4cf.blueboxgrid.com:5000.
+
 	+ Something to do with [need to see notes], mentioned in week04
 6. Passing the variables between functions, templates and user input. More practice.
 
 ###Stuff I don't understand:
 1. Connecting to 'real' databases.
 2. Talking to the database. 
+	- SQL Alchemy
+	- 

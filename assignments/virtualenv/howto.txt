@@ -1,0 +1,15 @@
+python virtualenv.py [options] <env>
+
+e.g.:
+
+python virtualenv/virtualenv.py --distribute folder/folder/
+
+activate the env
+source directory/bin/activate
+
+or
+
+source path/to/directory/bin/activate
+
+then install libraries as needed:
+pip install <library>

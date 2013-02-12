@@ -27,9 +27,7 @@ def parse_request(request):
 			return "ERROR: must be HTTP request"
 		URI = str(request[start+1:end]) #"GET /index.html HTTP/1.1" -->strip this to just index.html
 		if URI == '/ ' or URI == ' ':
-			return 'what should i do with root/index'
-		if URI[-2] == '/':
-			URI = URI[:-2]
+			return 'indexlevel (/ )'
 		return URI
 	else:
 		return "ERROR: must get an HTTP GET request"
@@ -42,23 +40,30 @@ def client_error_response():
 
 #4
 def resolve_uri(uri):
-	uri = uri.strip()
-	if uri not in glob.glob('*'):
-		return "HTTP:/1.1 404 Not Found"
-	if os.path.isfile(uri):
+	"""
+	- need to strip / / characters off, also?
+	- is there a way to typecast files v directories? 
+	"""
+# search current directory and see if file or directory requested actually exists:
+	for name in glob.glob('./*'):
+		print name 	
+	"""
+# if uri is a file (that exists?), return this:
+	if fileMarker != -1:
 		return "HTTP:/1.1 501 Not Implemented (Coming Soon)"
-	elif os.path.isdir(uri):
+# if uri is a directory that exists, return this:
+	elif fileMarker == -1:
 		return "HTTP:/1.1 200 OK"
-	elif not os.path.isfile(uri):
+# if uri is a file (or directory?) that doesn't exist, return this:
+	elif fileMarker != 'blah':
 		return "HTTP:/1.1 404 Not Found"
-	elif not os.path.isdir(uri):
-		return "HTTP:/1.1 404 FOLDER Not Found"
+# for all other cases that i'm not aware of, return this:
 	else:
-		return "HTTP:/1.1 40000000 DUNNO WHAT ELSE"
+		return 'meh?'	
+	"""
 
 #4.1
 def notFound_response():
-	#kinda already do this in #4?
 	return None 
 
 ## create the socket
@@ -85,3 +90,5 @@ while True: # keep looking for new connections forever
 		resolveLog = resolve_uri(log)
 		print resolveLog
 		client.close()
+
+
