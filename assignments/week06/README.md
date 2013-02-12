@@ -48,7 +48,7 @@ And commit the files to the repo:
 
 	git commit -m 'first commit etc etc'
 
-- ###Add South for database migrations. Not sure why yet, but do it.
+###Add South for database migrations. Not sure why yet, but do it.
 
 	pip install south
 
