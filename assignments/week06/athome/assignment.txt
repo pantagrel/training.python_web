@@ -1,4 +1,4 @@
-Assignment
+ Assignment
 
 * Review the data structure and views required for the Flaskr app.
 

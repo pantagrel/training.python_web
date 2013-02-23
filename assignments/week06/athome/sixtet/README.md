@@ -19,8 +19,10 @@
 	* One should show the archive of all posts from a given month and year
   	* One should show all the posts by a single user
 - Build views for each URL
+- Deploy the blog to VM
 
-# This will be turned in as fully as possible on Wednesday EOD.
-
-##I'll be out of town with no internet service until then.
+###Questions:
+- Should I use `get_absolute_url()` as well as doing `pattern()` stuff in the `url.py` file?
+- `urls.py` seems to exist globally (for the program) and locally (for the app). What are the important differences between those two uses?
+- Does each app have its own set of templates (is that the common protocol?)? Or should `base.html` be in a top-level `templates/` directory?
 

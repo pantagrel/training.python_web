@@ -4,6 +4,9 @@
 
 The [VM microtest](http://block647048-4cf.blueboxgrid.com:5000/).
 
+##Running the flaskr server locally to see work:
+    
+    python flaskr.py
 
 ###I followed Flask's online tutorial. 
 
