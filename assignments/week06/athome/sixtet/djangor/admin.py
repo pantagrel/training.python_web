@@ -1,7 +1,6 @@
 from django.contrib import admin
 from djangor.models import Entry, Archive, Author
 
-
 #look up ModelAdmin documentation for more options
 
 class EntryAdmin(admin.ModelAdmin):

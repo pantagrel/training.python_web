@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ entry.entry_name }}</h2>
+<div class="post_meta">
+    on {{ entry.publish_date }}
+</div>
+
+<div class="entry_body">
+    {{ entry.entry_text|safe|linebreaks }}
+    <p>Written by <a href="/djangor/authors/">{{entry.entry_author}}</a></p>
+    <a href="../">Return to home</a>
+</div>
+
+
+{% endblock %}
