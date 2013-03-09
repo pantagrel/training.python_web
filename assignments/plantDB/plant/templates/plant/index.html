@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your plant inventory:</h1>
+{% if entire_plant_list %}
+    <ul>
+    {% for plant in entire_plant_list %}
+        <li><a href="/plants/{{ plant.id }}/">{{ plant.common_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No plants are available at this time.</p>
+{% endif %}
+{% endblock %}
