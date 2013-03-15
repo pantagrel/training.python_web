@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All posts written by {{ entry.entry_author }}
+{% for entry in object_list %}
+{% if entry.entry_author == entry.id %}
+<h2><a href="/djangor/{{ entry.id }}">{{ entry.entry_name }}</a></h2>
+<div class="post_meta">
+    on {{ entry.publish_date }}
+</div>
+
+<div class="entry_body">
+    {{ entry.entry_text|safe|linebreaks }}
+</div>
+
+<p>Written by <a href="/djangor/authors/">{{entry.entry_author}}</a></p>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

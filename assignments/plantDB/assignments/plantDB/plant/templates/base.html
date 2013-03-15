@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{% block head_title %}the yard of you{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+        <header>
+            <h1><a href="../">{% block title %}the yard of you{% endblock %}</a></h1>
+        </header><!--header-->
+        <article>
+            {% block content %}
+    
+            {% endblock %}
+        </article><!--article-->
+        <footer>
+            <p>where a spade is a spade.</p>
+        </footer><!--footer-->
+        </div><!--wrapper-->
+    </body>
+</html>

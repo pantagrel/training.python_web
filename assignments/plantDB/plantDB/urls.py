@@ -6,14 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^plants/', include('plant.urls')),
+#     url(r'^plants/bloom_time/', 'plant.views.bloomsIndex', name='bloomsIndex'),
 
-    # Examples:
-    # url(r'^$', 'plantDB.views.home', name='home'),
-    # url(r'^plantDB/', include('plantDB.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )

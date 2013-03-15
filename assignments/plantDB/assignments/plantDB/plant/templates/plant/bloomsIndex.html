@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if bloomsList %}
+    <h2>{{ bloomsList.bloom_time}}</h2>
+    <ul>
+    {% for plant in bloomsList %}
+        <li><a href="/plants/{{ plant.id }}/">{{ plant.common_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No plants are available at this time.</p>
+{% endif %}
+{% endblock %}

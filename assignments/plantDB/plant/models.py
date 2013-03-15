@@ -7,7 +7,8 @@ class Plant(models.Model):
     zone = models.IntegerField()
     featureColor = models.CharField(max_length=20)
     nativeRegion = models.CharField(max_length=50)
-#     image = models.ImageField(upload_to=None)
+#     plant_image = models.ImageField(upload_to="images/", blank="True")
+    thingy = models.CharField(max_length=50, blank="True")
     plantDescription = models.TextField()    
 # should below be an organized list? see model field reference in docs. bush tree vine etc
     plantType = models.CharField(max_length=20)
@@ -44,4 +45,3 @@ class Plant(models.Model):
     def __unicode__(self):
         return self.common_name
         
-    

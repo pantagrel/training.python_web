@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h1>{{ all_plant_details.common_name }}</h1>
+        <h2 class="latinName">{{ all_plant_details.genus }} {{ all_plant_details.species }}</h2>
+        <section id="overview">
+        <ul>
+            <li>Zone: <a href="#">{{ all_plant_details.zone }}</a></li>
+            <li>Feature color: <a href="#">{{ all_plant_details.featureColor }}</a></li>
+            <li>Native region: <a href="#">{{ all_plant_details.nativeRegion }}</a></li>
+            <li>Bloom time: <a href="/plants/bloom_time/{{ all_plant_details.bloom_time }}/"> {{ all_plant_details.bloom_time }}</a></li>
+            <li>Sun needs: <a href="#">{{ all_plant_details.sun_needs }}</a></li>
+            <li>Plant type: <a href="#">{{ all_plant_details.plantType }}</a></li>
+        </ul>
+        </section>
+        <section>
+        <h3>Description</h3>
+        <p>{{ all_plant_details.plantDescription|safe|linebreaks }}</p>
+        </section>
+ 
+{% endblock %}
